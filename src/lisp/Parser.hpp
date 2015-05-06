@@ -12,11 +12,11 @@ namespace lisp
 class Object;
 class Environment;
 
-std::vector<std::shared_ptr<Object> > parse(
+std::shared_ptr<const Object> parse(
         const std::string& input,
         const std::shared_ptr<Environment>& env);
 
-std::vector<std::shared_ptr<Object> > parse(
+std::shared_ptr<const Object> parse(
         std::istream& stream,
         const std::shared_ptr<Environment>& env);
 

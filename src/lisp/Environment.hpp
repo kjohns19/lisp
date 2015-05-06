@@ -19,6 +19,8 @@ public:
     void define(const std::string& name, const std::shared_ptr<const Object>& obj);
     std::shared_ptr<const Object> get(const std::string& name) const;
 
+    void clear();
+
     bool isRelated(const std::shared_ptr<Environment>& env) const;
 private:
     std::shared_ptr<Environment> d_env;

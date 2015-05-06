@@ -1,4 +1,4 @@
-#include <lisp/Object.hpp>
+#include <lisp/types/Object.hpp>
 #include <lisp/Environment.hpp>
 
 namespace lisp
@@ -24,27 +24,12 @@ std::shared_ptr<const Object> Object::evaluateCompletely() const
     auto val = evaluate();
     while(!val->isEvaluated())
         val = val->evaluate();
-
     return val;
 }
 
-const char* Object::typeName(Type type)
+bool Object::isTrue() const
 {
-    switch(type)
-    {
-        case LIST:
-            return "list";
-        case NUMBER:
-            return "number";
-        case FUNCTION:
-            return "function";
-        case SYMBOL:
-            return "symbol";
-        case STRING:
-            return "string";
-        default:
-            return "unknown";
-    }
+    return true;
 }
 
 } //namespace lisp
